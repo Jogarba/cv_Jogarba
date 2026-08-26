@@ -30,10 +30,10 @@ async function animateTerminal() {
       await wait(28);
     }
 
-    await wait(180);
+    await wait(120);
     line.insertAdjacentHTML('beforeend', `<div>${output}</div>`);
     line.querySelector('.cursor').remove();
-    await wait(320);
+    await wait(220);
   }
 }
 

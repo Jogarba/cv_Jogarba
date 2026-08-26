@@ -33,15 +33,15 @@ function Terminal() {
       for (const [prompt, output] of terminalLines) {
         if (cancelled) return;
         for (let index = 1; index <= prompt.length; index += 1) {
-          await new Promise((resolve) => setTimeout(resolve, 28));
+          await new Promise((resolve) => setTimeout(resolve, 24));
           if (cancelled) return;
           setTypedPrompt(prompt.slice(0, index));
         }
-        await new Promise((resolve) => setTimeout(resolve, 180));
+        await new Promise((resolve) => setTimeout(resolve, 120));
         if (cancelled) return;
         setVisibleLines((current) => [...current, [prompt, output]]);
         setTypedPrompt('');
-        await new Promise((resolve) => setTimeout(resolve, 320));
+        await new Promise((resolve) => setTimeout(resolve, 220));
       }
     }
     typeLines();
